@@ -16,6 +16,7 @@ items.forEach((item) => {
     selectedCube.style.position = "absolute";
     selectedCube.style.zIndex = "1000";
     selectedCube.style.cursor = "grabbing";
+    selectedCube.classList.add("dragging");
   });
 
   document.addEventListener("mousemove", (e) => {
@@ -42,6 +43,7 @@ items.forEach((item) => {
     if (selectedCube) {
       selectedCube.style.zIndex = "1";
       selectedCube.style.cursor = "grab";
+      selectedCube.classList.remove("dragging");
       selectedCube = null;
     }
   });
